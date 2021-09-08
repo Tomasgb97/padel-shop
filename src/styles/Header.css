@@ -1,0 +1,32 @@
+
+@keyframes dropdown {
+
+    0%{
+
+        transform: translateY(-5rem);
+    }
+
+    100%{
+
+        transform: translateY(0rem);
+    }
+}
+
+.nav{
+
+    background-color: white;
+    filter: drop-shadow(-17px 4px 9px gray);
+    animation: dropdown 1s;
+}
+
+.text:hover .text::after{
+
+    content: "";
+    height: 25px;
+    width: 100%;
+    color: blue;
+    background-color: blue;
+    position: relative;
+    right: 100%;
+    top: 10px;
+}
