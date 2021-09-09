@@ -20,7 +20,7 @@ function ProductCard({product}) {
                     <ModalInfo description='description of product'></ModalInfo>
                 </Flex>
 
-                <Flex direction='column' alignItems='center' justifyContent='space-between'>
+               
 
                 <VStack>
                         <Text color='red' textDecor='line-through'>$Orig price</Text>
