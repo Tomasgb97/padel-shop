@@ -21,7 +21,8 @@ const config = {
  const db = () => getFirestore(initfirebase);
 
  let querySnapshot = async () => await getDocs(collection(db(), "Paletas"))
- .then(result => console.log(result.docs.map((doc) => doc.data())));
+ 
+
   
 
 
