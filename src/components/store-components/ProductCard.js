@@ -18,7 +18,7 @@ function ProductCard({prod}) {
                         <Box fontWeight='500' mb='0.3em' mt='0.3em' as='span'>{prod.Brand}</Box>
                         <Box color='GrayText' as='span'>{prod.Year}</Box>
                         <br />
-                        <ModalInfo description={prod.Description}></ModalInfo>
+                        <ModalInfo material={prod.Material} form={prod.Form} description={prod.Description}></ModalInfo>
                     </Flex>
 
                     <Flex direction='column' alignItems='center' justifyContent='space-between'>

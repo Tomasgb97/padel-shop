@@ -32,7 +32,6 @@ function Header() {
             justifySelf='center'>
             <Text className='text' cursor='pointer' as='a' fontWeight='700' marginTop='0px'>Home</Text>
             <Text className='text' cursor='pointer' as='a' fontWeight='700' marginTop='0px'>Store</Text>
-            <Text className='text' cursor='pointer' as='a' fontWeight='700' marginTop='0px'>Cart</Text>
             </Stack>
 
         </Box>
