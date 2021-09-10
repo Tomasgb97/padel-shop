@@ -1,7 +1,10 @@
 import React from 'react'
 import '../styles/Header.css'
-
-import { Box, Stack, Text } from '@chakra-ui/layout'
+import {
+    Box,
+    Stack,
+    Text
+} from '@chakra-ui/layout'
 
 
 
@@ -30,8 +33,8 @@ function Header() {
             justifyContent='space-evenly'
             alignItems='center'
             justifySelf='center'>
-            <Text className='text' cursor='pointer' as='a' fontWeight='700' marginTop='0px'>Home</Text>
-            <Text className='text' cursor='pointer' as='a' fontWeight='700' marginTop='0px'>Store</Text>
+            <Text className='text' cursor='pointer' as='a' href='/' fontWeight='700' marginTop='0px'>Home</Text>
+            <Text className='text' cursor='pointer' as='a' href='/store' fontWeight='700' marginTop='0px'>Store</Text>
             </Stack>
 
         </Box>

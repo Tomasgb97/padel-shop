@@ -24,7 +24,15 @@ function CartDrawer() {
   
     return (
       <>
-        <Button position='fixed' right='-1.5%' bottom='50%' transform='rotate(270deg)' rightIcon={<FiShoppingCart/>} ref={btnRef} colorScheme="orange" onClick={onOpen}>
+        <Button position='fixed'
+        right='-1.4%'
+        bottom='50%'
+        transform='rotate(270deg)'
+        rightIcon={<FiShoppingCart/>}
+        ref={btnRef}
+        colorScheme="orange"
+        onClick={onOpen}
+        _hover={{transform: "scaleX(1.2) rotate(270deg)", transition: "0.3s ease"}}>
         Cart
         </Button>
         <Drawer

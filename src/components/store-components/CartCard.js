@@ -20,7 +20,12 @@ import {
 
 function CartCard() {
     return (
-        <Box rounded='lg' width='100%' shadow='md'padding='1em'>
+        <Box
+        rounded='lg'
+        width='100%'
+        shadow='md'
+        padding='1em'
+        _hover={{transform: "scale(1.02)", transition: "0.3s ease"}}>
             <Flex>
                 <VStack justifyContent='space-around' alignItems='flex-start'>
                     <Heading fontSize='0.8em' as='h5'> Product name</Heading>

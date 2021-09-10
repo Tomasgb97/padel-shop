@@ -1,18 +1,20 @@
 
-import '../styles/App.css';
-import { Heading, Box, Stack, Divider, Text, VStack } from '@chakra-ui/layout';
-import { initfirebase, db, querySnapshot} from '../firebase';
-import { useEffect } from 'react';
+import {
+  Heading,
+  Box,
+  Stack,
+  Divider,
+  Text,
+  VStack
+} from '@chakra-ui/layout';
 import HomeBanners from './HomeBanners';
 import { Img } from '@chakra-ui/react';
 
+
+
 function App() {
 
-  useEffect(() => {
-    
-    db()
-    console.log(querySnapshot())
-  }, [])
+ 
 
   return (
     <div className="main">
@@ -22,7 +24,7 @@ function App() {
 
       
 
-      <Box
+      <Box 
       bgColor='black'
       display='flex'
       width='100%'
@@ -74,16 +76,16 @@ function App() {
       </Stack>
       
       <VStack px='5em' width='100%'>
-      <Stack width='100%' alignItems='flex-end'><HomeBanners title='TOP PLAY' text='The best quality padel rackets, imported directly from Spain.' ima='/paleta1.png' /></Stack>
+      <Stack data-aos='slide-left' width='100%' alignItems='flex-end'><HomeBanners title='TOP PLAY' text='The best quality padel rackets, imported directly from Spain.' ima='/paleta1.png' /></Stack>
       
-      <Stack width='100%' alignItems='center'><HomeBanners title='NEXT-GEN' text='The lastest models. Always whats next' ima='/paleta2.png' /></Stack>
+      <Stack data-aos='slide-down' width='100%' alignItems='center'><HomeBanners title='NEXT-GEN' text='The lastest models. Always whats next' ima='/paleta2.png' /></Stack>
 
-      <Stack width='100%' alignItems='flex-start'><HomeBanners title='TOP PLAY' text='The best quality padel rackets, imported directly from Spain.' ima='/pelotas1.png' /></Stack>
+      <Stack data-aos='slide-right' width='100%' alignItems='flex-start'><HomeBanners title='TOP PLAY' text='The best quality padel rackets, imported directly from Spain.' ima='/pelotas1.png' /></Stack>
       </VStack>
 
 
 
-      <Stack direction='row' alignItems='center' justifyContent='center' width='100%'>
+      <Stack data-aos='slide-up' direction='row' alignItems='center' justifyContent='center' width='100%'>
           <Stack justifyContent='space-around' flexWrap='wrap' direction='row' width='60%'>
             <Img width='25%' src='/head.png'></Img>
             <Img width='35%' src='/dunlop.png'></Img>
