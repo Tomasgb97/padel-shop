@@ -8,18 +8,22 @@ const addProduct = (product) => {
    if(indexOfProduct >= 0){
 
         if(isNaN(usersCart[indexOfProduct].Quantity)){
-        usersCart[indexOfProduct].Quantity = 1}
-        else{usersCart[indexOfProduct].Quantity += 1}
+
+        usersCart[indexOfProduct].Quantity = 1
+
+        }
+        else{
+
+        usersCart[indexOfProduct].Quantity += 1
+        }
         
    }
    else{
 
         product.Quantity = 1;
-
         usersCart.push(product);
    }
 
-    console.log(usersCart)
     localStorage.setItem("cart", JSON.stringify(usersCart));
 };
 
@@ -30,16 +34,12 @@ const deleteProduct = (product) => {
     if(indexOfProduct >= 0){
  
         usersCart.splice(indexOfProduct, 1);
-         console.log(usersCart)
-         
-    }
-    
+     }
     
     localStorage.setItem("cart", JSON.stringify(usersCart));
 };
 
-const clearCart = () => { localStorage.removeItem("cart")
-console.log(usersCart)};
+const clearCart = () => { localStorage.removeItem("cart")}
 
 export {usersCart, addProduct, deleteProduct, clearCart}
 

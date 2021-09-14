@@ -20,16 +20,14 @@ import { FiShoppingCart } from 'react-icons/fi';
 import CartCard from "./CartCard"
 import { usersCart } from "../../Cart"
 
-function CartDrawer() {
+function CartDrawer({totalcart, cart, deleteprod, changeQuantity}) {
 
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef();
 
-    const [cart, setCart] = useState(usersCart);
 
-    const totalCartPrice = cart.reduce(function(acc, curr) { return acc + curr.Price * curr.Quantity}, 0);
   
     return (
       <>
@@ -64,12 +62,12 @@ function CartDrawer() {
             <DrawerBody>
                 <Box bgColor='#38a169' width='100%' height='0.3em' rounded='sm' mb='2em'></Box>
               <VStack width='100%' justifyContent='space-evenly'>
-                {cart.map((item) => <CartCard key={item.Name} prod={item}></CartCard>)}
+                { cart.length > 0 ? cart.map((item) => <CartCard changeQuantity={changeQuantity} deleteprod={()=> deleteprod(item)} key={item.Name} prod={item}></CartCard>) : <Text>Your cart is empty</Text>}
               </VStack>
             </DrawerBody>
   
             <DrawerFooter backgroundColor='#ffa50082' as='Flex' justifyContent='space-between'>
-                <Text fontWeight='semibold'>$ {totalCartPrice}</Text>
+                <Text fontWeight='semibold'>$ {totalcart}</Text>
               <Button colorScheme="green">Checkout</Button>
             </DrawerFooter>
           </DrawerContent>
