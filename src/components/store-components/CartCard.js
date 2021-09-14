@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     Flex,
     Box,
@@ -16,9 +16,12 @@ import {
   } from "@chakra-ui/react"
   import { Image } from '@chakra-ui/image'
   import { FiTrash2 } from 'react-icons/fi'
+  import { deleteProduct } from '../../Cart'
 
 
-function CartCard() {
+function CartCard({prod}, refresh) {
+
+
     return (
         <Box
         rounded='lg'
@@ -28,8 +31,8 @@ function CartCard() {
         _hover={{transform: "scale(1.02)", transition: "0.3s ease"}}>
             <Flex>
                 <VStack justifyContent='space-around' alignItems='flex-start'>
-                    <Heading fontSize='0.8em' as='h5'> Product name</Heading>
-                    <NumberInput width='35%' min={0} max={10}>
+                    <Heading fontSize='0.8em' as='h5'>{prod.Name}</Heading>
+                    <NumberInput width='35%' defaultValue={prod.Quantity} min={1} max={10}>
                         <NumberInputField />
                         <NumberInputStepper>
                             <NumberIncrementStepper />
@@ -37,13 +40,13 @@ function CartCard() {
                         </NumberInputStepper>
                     </NumberInput>
                     <Flex justifyContent='space-between' width='35%'>
-                    <Icon cursor='pointer' as={FiTrash2} h={5} w={5}></Icon>
-                    <Text>$Price</Text>
+                    <Icon onClick={ () => { deleteProduct(prod)} } cursor='pointer' as={FiTrash2} h={5} w={5}></Icon>
+                    <Text>${prod.Price}</Text>
                     </Flex>
                 </VStack>
 
                 <Box width='30%'>
-                    <Image src='https://vairo.com/padel/wp-content/uploads/2021/02/pala-carbon-pink-frente-1.jpg'></Image>
+                    <Image src={prod.Photo}></Image>
                 </Box>
             </Flex>
         </Box>

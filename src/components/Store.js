@@ -1,11 +1,12 @@
 import React from 'react'
-import { initfirebase, db, querySnapshot} from '../firebase';
+import {db, querySnapshot} from '../firebase';
 import { useEffect, useState } from 'react';
 import { Box, Stack, VStack, Flex } from '@chakra-ui/layout'
 import Barleft from './store-components/Barleft'
 import SearchBar from './store-components/SearchBar'
 import ProductCard from './store-components/ProductCard'
 import CartDrawer from './store-components/CartDrawer';
+
 
 
 function Store() {
@@ -15,7 +16,7 @@ function Store() {
    useEffect(() => {
     
    
-    db()
+    db();
     querySnapshot().then(
       function(result) { const info = result.docs.map((product) => product.data())
       setproducts(info)

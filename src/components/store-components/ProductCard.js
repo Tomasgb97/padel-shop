@@ -11,11 +11,14 @@ import {
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import ModalInfo from './ModalInfo';
+import { deleteProduct, addProduct, clearCart } from '../../Cart';
 
 
 function ProductCard({prod}) {
+
     return (
         <Box _hover={{transform: "scale(1.05)", color: "orange"}} transition='0.3s ease' width='25%' margin='2em'>
+
 
             <Flex cursor='pointer' rounded='lg' width='100%' boxShadow='lg' flexDir='column'>
 
@@ -60,7 +63,7 @@ function ProductCard({prod}) {
                             placement={'top'}
                             color={'gray.800'}
                             fontSize={'1.2em'}>
-                            <chakra.a href={'#'} display={'flex'}>
+                            <chakra.a onClick={()=> {addProduct(prod)}}  href={'#'} display={'flex'}>
                                 <Icon as={FiShoppingCart} h={5} w={5} alignSelf={'center'} />
                             </chakra.a>
                         </Tooltip>
