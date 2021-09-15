@@ -29,13 +29,12 @@ function Store() {
 
 
 
-  const [cart, setCart] = useState(usersCart);
+  const [cart, setCart] = useState(usersCart);  //sets localstorage cart as statewhen store is opened.
+
+  const totalCartPrice = cart.reduce(function(acc, curr) { return acc + curr.Price * curr.Quantity}, 0); //sums every product and multiply its prices with the amount of each one on the cart
 
 
-  const totalCartPrice = cart.reduce(function(acc, curr) { return acc + curr.Price * curr.Quantity}, 0);
-
-
-  const deleteProduct = (product) => {
+  const deleteProduct = (product) => {   //deletes product from the cart array, set that to state and then pushes than array to local storage
  
     const indexOfProduct = cart.findIndex(element => element.Name == product.Name);
 
@@ -52,14 +51,14 @@ function Store() {
     
     };
 
-    const addProduct = (product) => {
+    const addProduct = (product) => {  //adds a product to the cart array, set that to state and then pushes than array to local storage
 
 
-      const indexOfProduct = cart.findIndex(element => element.Name == product.Name);
+      const indexOfProduct = cart.findIndex(element => element.Name == product.Name); //checks if the added product already exists in the array
    
       if(indexOfProduct >= 0){
    
-           if(isNaN(cart[indexOfProduct].Quantity)){
+           if(isNaN(cart[indexOfProduct].Quantity)){ //if there product is not on the array it adds one
    
            cart[indexOfProduct].Quantity = 1
            setCart(cart)
@@ -67,7 +66,11 @@ function Store() {
            }
            else{
    
-           cart[indexOfProduct].Quantity += 1
+          if(cart[indexOfProduct].Quantity == 10){   //if the product is already on the array it sums 1 but with a max of 10 units for each product
+            cart[indexOfProduct].Quantity = 10
+          }else{
+            cart[indexOfProduct].Quantity += 1
+          }
            setCart(cart)
            }
            
@@ -82,13 +85,12 @@ function Store() {
        localStorage.setItem("cart", JSON.stringify(cart));
       };
 
-      const changeQuantity = (product, value) => {
+      const changeQuantity = (product, value) => { //sets the queantity of a product to adiferent number if is modified from the cart component using input
 
         const indexOfProduct = cart.findIndex(element => element.Name == product.Name);
 
         cart[indexOfProduct].Quantity = value;
         setCart(cart);
-        console.log(cart)
         localStorage.setItem("cart", JSON.stringify(cart))
       }
 

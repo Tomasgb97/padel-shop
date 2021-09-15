@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="main">
       <Box textAlign='center' width='100%'>
-      <Heading fontStyle='italic'>It's padel, It's everything</Heading>
+      <Heading fontStyle='italic'>THIS PROJECT IS NOT FINISHED</Heading>
       </Box>
 
       
