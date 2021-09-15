@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/padel-shop/static/css/main.2e18b635.chunk.css",
+    "main.js": "/padel-shop/static/js/main.518f71ca.chunk.js",
+    "main.js.map": "/padel-shop/static/js/main.518f71ca.chunk.js.map",
+    "runtime-main.js": "/padel-shop/static/js/runtime-main.8cc94724.js",
+    "runtime-main.js.map": "/padel-shop/static/js/runtime-main.8cc94724.js.map",
+    "static/css/2.7fc9bc2b.chunk.css": "/padel-shop/static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.c74d15ce.chunk.js": "/padel-shop/static/js/2.c74d15ce.chunk.js",
+    "static/js/2.c74d15ce.chunk.js.map": "/padel-shop/static/js/2.c74d15ce.chunk.js.map",
+    "index.html": "/padel-shop/index.html",
+    "static/css/2.7fc9bc2b.chunk.css.map": "/padel-shop/static/css/2.7fc9bc2b.chunk.css.map",
+    "static/css/main.2e18b635.chunk.css.map": "/padel-shop/static/css/main.2e18b635.chunk.css.map",
+    "static/js/2.c74d15ce.chunk.js.LICENSE.txt": "/padel-shop/static/js/2.c74d15ce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8cc94724.js",
+    "static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.c74d15ce.chunk.js",
+    "static/css/main.2e18b635.chunk.css",
+    "static/js/main.518f71ca.chunk.js"
+  ]
+}
